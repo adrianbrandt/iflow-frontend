@@ -38,9 +38,9 @@ export default {
     },
     methods :{
         async deleteMachine(id){
-            let result = await axios.get(`https://localhost:7162/api/Maskin/${id}`)
+            let result = await axios.get(`https://localhost:7162/api/Machine/${id}`)
             if(result.status==200){
-                await axios.delete(`https://localhost:7162/api/Maskin/${id}`)
+                await axios.delete(`https://localhost:7162/api/Machine/${id}`)
                 this.loadData();
             }
         },
@@ -54,7 +54,7 @@ export default {
             {
                 this.$router.push({name:"Login"})
             }
-            let result = await axios.get(`https://localhost:${port}/api/Maskin/${id},all,1`);
+            let result = await axios.get(`https://localhost:${port}/api/Machine/${id},all,1`);
             this.machine=result.data;
         }
     },
@@ -67,6 +67,10 @@ export default {
 </script>
 <style>
 
+table{
+    margin: auto;
+    border: none;
+}
 
 .but{
     width:45px;

@@ -39,7 +39,7 @@ export default {
             let usr=localStorage.getItem("user-info");
             let uid=JSON.parse(usr).id
 
-            const result =await axios.put(`https://localhost:${port}/api/Maskin/`+this.$route.params.id,{
+            const result =await axios.put(`https://localhost:${port}/api/Machine/`+this.$route.params.id,{
                 id:this.$route.params.id,
                 name:this.machine.name,
                 user:uid,
@@ -59,7 +59,7 @@ export default {
         {
             this.$router.push({name:"Login"})
         }
-        const result = await axios.get(`https://localhost:7162/api/Maskin/${mid}`)
+        const result = await axios.get(`https://localhost:7162/api/Machine/${mid}`)
         console.warn(result.data);
         this.machine = result.data;
     }

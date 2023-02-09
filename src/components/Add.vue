@@ -5,7 +5,7 @@
     </h1>
 
     <form class="add" onsubmit="return false;">
-    <input type="text" v-model="machine.name" placeholder="Skriv Maskin Navn" @keydown.enter="adding">
+    <input type="text" v-model="machine.name" placeholder="Enter Machine Name" @keydown.enter="adding">
     <button type="button" v-on:click="adding">Legg til</button>
     </form>
 
@@ -37,7 +37,7 @@ export default {
             let usr=localStorage.getItem("user-info");
             let user=JSON.parse(usr).id
 
-            const result =await axios.post(`https://localhost:${port}/api/Maskin/${this.machine.name},${user}`)
+            const result =await axios.post(`https://localhost:${port}/api/Machine/${this.machine.name},${user}`)
             if(result.status==201){
                 this.$router.push({name:"Home"})
             }
