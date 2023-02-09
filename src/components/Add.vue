@@ -33,6 +33,7 @@ export default {
     methods:{
         async adding()
         {   
+            //Bytt ut om api får ny port ved testing
             let port = 7162
             let usr=localStorage.getItem("user-info");
             let user=JSON.parse(usr).id
